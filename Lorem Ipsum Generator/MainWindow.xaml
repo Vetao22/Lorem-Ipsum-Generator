@@ -1,0 +1,44 @@
+﻿<Window x:Class="Lorem_Ipsum_Generator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lorem_Ipsum_Generator"
+        mc:Ignorable="d"
+        Title="Lorem Ipsum Generator" Height="450" Width="800" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Content="Words: " VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txtWords" Grid.Column="1" VerticalContentAlignment="Center" Width="100"
+                     TextChanged="TextChanged"/>
+
+            <Label Grid.Column="2" Content="Paragraphs: " VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txtParagraphs" Grid.Column="3" VerticalContentAlignment="Center" Width="100"
+                     TextChanged="TextChanged"/>
+
+            <Button Name="btnGenerate" Grid.Column="4" Content="Generate" Margin="10 5 5 5" Height="20"
+                    Click="btnGenerate_Click"/>
+       
+
+        </Grid>
+        
+        <TextBox x:Name="txtResultBox" Margin="5" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Row="1"
+                ScrollViewer.HorizontalScrollBarVisibility="Visible" TextWrapping="Wrap"/>
+    </Grid>
+</Window>
